@@ -1,0 +1,55 @@
+:engine:
+  :noid: true
+:layout:
+  div#inq-wrapper@{ :model(ord_deal_inq) }:
+    fieldset@{ :padding(5) :border(false) }:
+    - - grid#grd@{ :title(null) :margin(5) }:
+        - toolbar:
+          - button#export-pdf@{ :text(PDF) }
+          - button#export-csv@{ :text(CSV) }
+          - button#export-xlsx@{ :text(EXCEL) }
+          - tbfill
+          - button#expand@{ :text(">") :title(Expand) }
+        - gtext#client-code@{  }
+        - gtext#sec-symbol@{ :text(Symbol) }
+        - gnumber#qty@{ :format('0,000') :summaryType(sum) }
+        - gtext#x-order-no@{  }
+        - gtext#confirm-no@{  }
+        - gnumber#commission@{ :format('0,000.00') :summaryType(avg) }
+        - gnumber#fee@{ :format('0,000.00')  }
+        - gtext#ae-code@{ :summaryType(count) }
+        - gtext#order-no@{  }
+        - gtext#fullname-lc@{ :text(Fullname) }
+        - gnumber#net-amount@{ :format('0,000.00')  }
+        - gdate#order-date@{  }
+        - paging
+    - - form#frm-filter:
+        - fieldset#filter@{ :border(true) :width(420) }:
+          - textfield#sec-symbol@{  }
+          - textfield#ae-code
+          - fieldcontainer#order-date@{  }:
+            - datefield#order-date-gte@{ :name(order_date_gte) }
+            - datefield#order-date-lte@{ :name(order_date_lte) }
+        - toolbar:
+          - button#search
+          - button#clear-filter
+:config:
+  inq-wrapper:
+    :plugins: [{ xclass: 'Ext.plugin.ActAsInquiry' }]
+  grd:
+    :plugins: [{ xclass: 'Ext.plugin.MultiSortGrid' }]
+    :features: [{ ftype: 'groupingsummary' }]
+    :store: >
+      <js>(this.ss = new Ext.data.JsonStore({
+              remoteFilter: true,
+              remoteGroup: false,
+              groupField: 'sec_symbol',
+              proxy: { type: 'rest', url: '/inq/ord_deal_inq', reader: { type: 'json', root: 'data' } },
+              fields: [{"type": "string", "name": "client_code"}, {"type": "string", "name": "sec_symbol"}, {"type": "integer", "name": "qty"}, {"type": "string", "name": "x_order_no"}, {"type": "string", "name": "confirm_no"}, {"type": "float", "name": "commission"}, {"type": "float", "name": "fee"}, {"type": "string", "name": "ae_code"}, {"type": "string", "name": "order_no"}, {"type": "string", "name": "fullname_lc"}, {"type": "float", "name": "net_amount"}, {"type": "date", "name": "order_date"}]
+          })
+      )
+      </js>
+  paging:
+    :pageSize: 100
+    :store: <js>this.ss</js>
+    

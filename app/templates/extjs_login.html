@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block head_script %}
+<script language="javascript1.7" charset='utf-8'>
+// TODO RequireJS Config
+require.config({
+    baseUrl: 'static',
+    urlArgs: "bust=" + (new Date()).getTime()
+});
+
+require(['app', 'controllers/login_controller'], function(App, MainCtr){
+    App.redirect('/');
+});
+</script>
+{% endblock %}

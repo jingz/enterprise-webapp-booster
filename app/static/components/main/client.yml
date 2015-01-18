@@ -1,0 +1,94 @@
+:engine:
+  :noid: true
+  :store_dir: ../../models
+:layout:
+  div.wrapper:
+    fieldset@{ :padding(5) :border(false) }:
+    - - grid#grd.client-store@{ :title(null) :height(640) :width(850) }:
+        - toolbar:
+          - button#export-pdf@{ :text(PDF) }
+          - button#export-csv@{ :text(CSV) }
+          - button#export-xlsx@{ :text(EXCEL) }
+          - tbfill
+          - button#expand@{ :text(">>") :title(Expand) }
+        - runningcolumn
+        - gtext#client-code
+        - gtext#status
+        - gtext#id-type
+        - gtext#id-no
+        - gdate#expire-date
+        - gtext#title
+        - gtext#title-desc@{ :hidden(true) }
+        - gtext#client-firstname-lc
+        - gtext#client-lastname-lc
+        - gtext#client-firstname-en
+        - gtext#client-lastname-en
+        - gtext#spouse-firstname@{ :hidden(true) }
+        - gtext#spouse-lastname@{ :hidden(true) }
+        - gtext#spouse-id-type@{ :hidden(true) }
+        - gtext#spouse-id-no@{ :hidden(true) }
+        - gtext#gender@{ :hidden(true) }
+        - gtext#client-type@{ :hidden(true) }
+        - gtext#client-sub-type@{ :hidden(true) }
+        - gboolean#custodian-flag@{ :hidden(true) }
+        - gtext#ats-conso-method@{ :hidden(true) }
+        - gboolean#check-total-credit-limit-flag@{ :hidden(true) }
+        - gnumber#total-credit-limit@{ :hidden(true) }
+        - gdate#birth-date@{ :hidden(true) }
+        - gtext#nationality@{ :hidden(true) }
+        - gtext#country-code@{ :hidden(true) }
+        - gtext#occupation-code@{ :hidden(true) }
+        - gtext#business-type@{ :hidden(true) }
+        - gtext#business-type-desc@{ :hidden(true) }
+        - gnumber#withholding-tax-rate@{ :hidden(true) }
+        - gtext#tax-type@{ :hidden(true) }
+        - gtext#tax-no@{ :hidden(true) }
+        - gtext#corporate-type-code@{ :hidden(true) }
+        - gtext#gov-position-code@{ :hidden(true) }
+        - gnumber#suitability-level@{ :hidden(true) }
+        - gdate#suitability-review-date@{ :hidden(true) }
+        - gtext#kyc-occupation-code@{ :hidden(true) }
+        - gtext#kyc-risk-level@{ :hidden(true) }
+        - gdate#kyc-last-review-date@{ :hidden(true) }
+        - gtext#bot-country-code@{ :hidden(true) }
+        - gtext#cust-group@{ :hidden(true) }
+        - gnumber#current-contact-id@{ :hidden(true) }
+        - gnumber#office-contact-id@{ :hidden(true) }
+        - gnumber#legal-contact-id@{ :hidden(true) }
+        - gnumber#deliver-contact-id@{ :hidden(true) }
+        - gtext#email@{ :hidden(true) }
+        - gtext#mobile-phone-1@{ :hidden(true) }
+        - gtext#mobile-phone-2@{ :hidden(true) }
+        - gtext#other-contact@{ :hidden(true) }
+        - gboolean#nr-flag@{ :hidden(true) }
+        - gtext#cust-staff@{ :hidden(true) }
+        - gtext#par-group@{ :hidden(true) }
+        - gtext#method-send-doc@{ :hidden(true) }
+        - gtext#route@{ :hidden(true) }
+        - gdate#open-date@{ :hidden(true) }
+        - gtext#tag-1@{ :hidden(true) }
+        - gtext#tag-2@{ :hidden(true) }
+        - gtext#tag-3@{ :hidden(true) }
+        - gtext#tag-4@{ :hidden(true) }
+        - gtext#tag-5@{ :hidden(true) }
+        - gtext#beneficiary-bank-code@{ :hidden(true) }
+        - gtext#beneficiary-bank-account-no@{ :hidden(true) }
+        - gtext#beneficiary-name-lc@{ :hidden(true) }
+        - gtext#beneficiary-name-en@{ :hidden(true) }
+        - gtext#created-by@{ :hidden(true) }
+        - gtext#updated-by@{ :hidden(true) }
+        - gdate#created-at@{ :hidden(true) }
+        - gdate#updated-at@{ :hidden(true) }
+        - gtext#client-branch-no@{ :hidden(true) }
+        - gtext#client-branch-name@{ :hidden(true) }
+        - gboolean#rd-recognition-flag@{ :hidden(true) }
+        - paging
+    - - form#frm-filter:
+        - fieldset#filter@{ :border(true) :width(320) }:
+          - textfield#client-code-like
+          - textfield#status
+        - toolbar:
+          - button#search
+:config:
+  grd:
+    plugins: [{ xclass: 'Ext.plugin.MultiSortGrid' }]

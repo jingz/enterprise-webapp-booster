@@ -1,0 +1,20 @@
+:engine:
+  :noid: true
+:layout:
+  div.view-wrapper:
+    form#frm:
+      fieldset#info:
+      - textfield#test-box
+      - textfield#test-xxx
+    grid#grd@{ :title(null) :height(500) }:
+    - gtext#id
+    - gtext#name
+    - gdate#aday
+    - gnumber#money
+    - gtext#groupper
+    - paging
+
+:config:
+  grd:
+    :features: [{ftype: 'grouping'}, {ftype: 'summary'}]
+    :plugins: [{xclass: 'Ext.plugin.FilterableGrid'}]

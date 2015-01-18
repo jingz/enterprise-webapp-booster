@@ -1,0 +1,31 @@
+:engine:
+  :noid: true
+  :store_dir: ../../models
+:layout:
+  div.view-wrapper:
+    div:
+    - - form#frm:
+          fieldset#info:
+          - - textfield#url@{ :name(url_contains) }
+          - - button#search
+    - - form#feed-frm:
+          fieldset#add-form:
+          - - textfield@{ :name(url) :emptyText("feed url")}
+          - - button#add
+    grid#grd.feed-store@{ :title(null) :height(500) }:
+    - runningcolumn
+    - gnumber#id@{ :hidden(true) }
+    - gboolean#is-skip
+    - gtext#url@{ :width(300) }
+    - gtext#name
+    - gtext#etag
+    - gnumber#status
+    - gdate#last-modified
+    - gdate#created-at
+    - gdate#updated-at
+    - paging@{ :pageSize(1000) }
+
+:config:
+  grd:
+    :features: [{ftype: 'grouping'}, {ftype: 'summary'}]
+    # :plugins: [{xclass: 'Ext.plugin.FilterableGrid'}]

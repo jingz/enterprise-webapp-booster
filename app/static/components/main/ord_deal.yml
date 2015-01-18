@@ -1,0 +1,81 @@
+:engine:
+  :noid: true
+  :store_dir: ../../models
+:layout:
+  div.wrapper:
+    fieldset@{ :padding(5) :border(false) }:
+    - - grid#grd.ord-deal-store@{ :title(null) :margin(5) }:
+        - toolbar:
+          - button#export-pdf@{ :text(PDF) }
+          - button#export-csv@{ :text(CSV) }
+          - button#export-xlsx@{ :text(EXCEL) }
+          - tbfill
+          - button#expand@{ :text(">") :title(Expand) }
+        - runningcolumn
+        - gtext#client-code@{ :locked(true) }
+        - gnumber#client-account-id
+        - gnumber#ord-id
+        - gnumber#deal-id
+        - gtext#market
+        - gtext#broker-no
+        - gtext#sb-no
+        - gtext#sb-order-no
+        - gtext#branch-code
+        - gtext#order-no
+        - gtext#x-order-no
+        - gtext#x-match-no
+        - gtext#confirm-no
+        - gnumber#securities-id
+        - gtext#sec-symbol
+        - gtext#trustee-id
+        - gtext#side
+        - gtext#board
+        - gnumber#price
+        - gtext#condition-price@{ :summaryType(max) }
+        - gnumber#matched-price
+        - gnumber#qty@{ :summaryType(sum) }
+        - gnumber#confirm-qty
+        - gtext#order-status
+        - gtext#condition
+        - gtext#order-type
+        - gtext#special-order-type
+        - gtext#basket-no
+        - gtext#pc-flag
+        - gtext#pt-type
+        - gtext#sbl-type
+        - gdate#order-date
+        - gdate#order-date-time
+        - gdate#cancel-date-time
+        - gdate#change-date-time
+        - gdate#deal-date
+        - gdate#deal-time
+        - gtext#ae-code
+        - gtext#front-user-code
+        - gtext#cancel-user-code
+        - gtext#approve-user-code
+        - gtext#set-trader-id
+        - gtext#channel-code
+        - gtext#front-trading-system
+        - gnumber#net-amount
+        - gnumber#commission
+        - gnumber#fee
+        - gnumber#clearing-fee
+        - gnumber#trading-fee
+        - gnumber#settlement-fee
+        - gnumber#vat
+        - gnumber#withholding-tax
+        - gboolean#manual-commission-flag
+        - paging@{ :pageSize(100) }
+    - - form#frm-filter:
+        - fieldset#filter@{ :border(true) :width(420) }:
+          - textfield#sec-symbol-eq
+          - fieldcontainer#order-date@{ :text(Open Date) }:
+            - datefield#order-date-since@{ :name(order_date_gte) :width(120) }
+            - datefield#order-date-until@{ :name(order_date_lte) :width(120) }
+        - toolbar:
+          - button#search
+          - button#clear-filter
+:config:
+  grd:
+    plugins: [{ xclass: 'Ext.plugin.MultiSortGrid' }]
+    features: [{ ftype: 'groupingsummary' }]

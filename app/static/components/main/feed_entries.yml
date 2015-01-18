@@ -1,0 +1,34 @@
+:engine:
+  :noid: true
+  :store_dir: ../../models
+:layout:
+  div.view-wrapper:
+    form#frm:
+      fieldset#info:
+      - - textfield#title@{ :name(title_contains) }
+      - - textfield#feed-id@{ :name(feed_id_eq) }
+      - - button#search
+    editorgrid#grd.feed-entries-store@{ :title(null) :height(600) }:
+    - toolbar:
+      - button#mark-all-as-read
+      - button#save
+    - runningcolumn
+    - gnumber#id@{ :hidden(true) }
+    - gboolean#mark-as-read@{ :text(R) }
+    - gboolean#mark-as-goodnews@{ :text(G) }
+    - gtext#title@{ :width(500) }
+    - gtemplate#link
+    - gtext#summary
+    - gtext#item-id
+    - gnumber#feed-id
+    - gdate#published
+    - gdate#updated
+    - paging@{ :pageSize(25) }
+
+:config:
+  grd:
+    :features: [{ftype: 'grouping'}, {ftype: 'summary'}]
+    # :plugins: [{xclass: 'Ext.plugin.FilterableGrid'}]
+  link:
+    :tpl: "<a href='{link}'>link</a>"
+

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block head_script %}
+<script language="javascript" charset='utf-8'>
+// TODO RequireJS Config
+require.config({
+    baseUrl: 'static',
+    urlArgs: "bust=" + (new Date()).getTime()
+});
+
+const APP_MENU_TREE = {{menu_tree|tojson}}
+const APP_ALLOW_ROUTES = {{menu_urls|tojson}}
+require(['app', 
+        'controllers/main_controller'], 
+        function(App, MainCtr){
+
+    App.redirect('/');
+    App.redirect('/feed/manage');
+});
+</script>
+
+{% endblock %}

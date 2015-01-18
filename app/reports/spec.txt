@@ -1,0 +1,10 @@
+Inquiry PDF Report Specification
+================================
+accept data from sqlalchemy format, [{key: value, ... }, ... ]
+accept and print filter condition of the data, field > x and at date ..
+print user that call the report
+print datetime of report
+accept grouping and hook-able at header/footer summary
+set filename
+config page size, A4 ..
+config page layout, landscape ...

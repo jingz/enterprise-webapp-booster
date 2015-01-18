@@ -1,0 +1,22 @@
+:engine:
+  noid: true
+:layout:
+  div#form-wrapper@{ :padding(10) }:
+    form#frm-login:
+      fieldset#fis-login@{ :title("") :border(false) }:
+      - textfield#username@{ hideLabel(true) :width(100%) }
+      - passwordfield#password@{ hideLabel(true) :width(100%) }
+      - button#login
+:config:
+  form-wrapper:
+    style: 'background-color: #ccc;'
+  frm-login:
+    style: 'background-color: #ccc;'
+  fis-login:
+    style: 'width: 100%; margin: 150px 40%;'
+  textfield:
+    fieldStyle: 'padding: 20px 20px; font-size: 1.3em;'
+  password:
+    fieldStyle: 'padding: 20px 20px; font-size: 1.3em;'
+  login:
+    style: 'padding: 0.3em; width: 100%; margin-top: 0.5em;'

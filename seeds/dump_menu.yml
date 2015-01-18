@@ -1,0 +1,47 @@
+"MOD000;ROOT":
+  "MOD001;Client and Account Info":
+  - "ELT001;List Account"
+  - "ELT002;List Change Address"
+  - "ELT003;List Change Approve Line and Marketing"
+  - "ELT004;Close Account"
+  - "ELT005;Log Update Client and Account"
+  - "ELT006;Client List by Marketing"
+  - "ELT007;Reference Person of Client"
+  - "ELT008;Client Information for Review Credit"
+  "MOD002;Trading":
+  - "ELT009;List Order and Confirm By Securities"
+  - "ELT010;Pay and Receive By Securities"
+  - "ELT011;Trading Volume - TEAM"
+  - "ELT012;Trading Performance for Port Investment"
+  - "ELT013;Settle Buy And Sell - 3 Due Dates"
+  - "ELT014;Daily Net Settlement Control Report by Marketing"
+  - "ELT015;Daily Net Settlement Trading (Sameday)"
+  - "ELT016;Account Portfolio Performance Detail"
+  "MOD003;Corporate Action":
+  - "ELT017;X Register Report By Account"
+  "MOD004;Account - Monetary":
+  - "ELT018;Statement Collateral"
+  - "ELT019;Statement Credit Balance"
+  "MOD005;Account - Securities":
+  - "ELT020;Movement By Securities"
+  - "ELT021;Deposit and Withdraw By Securities"
+  - "ELT022;Account Securities Transaction"
+  "MOD005;Executive Summary":
+  - "ELT023;Trading Volume By Client Type"
+  - "ELT024;Asset Under Management"
+  - "ELT025;Trading Volume For Commission And Fee"
+  - "ELT026;Most Active Stock"
+  - "ELT027;Trading Volume - Internet Settrade & Main Front"
+  - "ELT028;Trading Volume - Marketing Incentive "
+  - "ELT029;Trading Volume - KPI"
+  - "ELT030;Performance Report"
+  - "ELT031;Contra Broker Trading"
+  - "ELT032;Trading Volume for E-Trade"
+  - "ELT033;Trading Volume ETrade and Traditional with Commission and Incentive"
+  - "ELT034;Trading Performance for Port Investment"
+  "MOD006;Audit":
+  - "ELT035;Trading Volume By Month"
+  - "ELT036;Stock Trading Concentration"
+  - "ELT037;Order Trading with Suspecious Price"
+  - "ELT038;Incentive for Commission Sliding"
+  - "ELT039;Most Stock Outstanding  & Main Front"
